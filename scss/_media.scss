@@ -1,0 +1,3188 @@
+@use "./variables" as *;
+
+
+/* ========================================
+   wide-desktop - 1600px 이하
+======================================== */
+
+@media (max-width: $wide-desktop) {
+
+    .hero {
+        &__gallery {
+            width: min(70%, 550px);
+        }
+
+        &__title {
+            font-size: 75px;
+        }
+
+        &__button {
+            width: 255px;
+
+            span {
+                font-size: 16px;
+            }
+        }
+
+        &__right-visual {
+            min-width: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .heroSwiper,
+        .swiper-wrapper,
+        .swiper-slide {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            overflow: hidden;
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        /* 첫 번째 사진 */
+        .hero__slide--hand img {
+            object-position: 7% center;
+        }
+
+        /* 두 번째 사진 */
+        .hero__slide--store img {
+            object-position: center;
+        }
+
+        /* 세 번째 사진 */
+        .hero__slide--skincare img {
+            object-position: 90% center;
+        }
+
+
+        .heroSwiper {
+            display: block;
+        }
+
+        &__responsive-picture {
+            display: none;
+        }
+    }
+
+    .category {
+        padding: 100px 50px;
+    }
+
+    .brand-origin {
+        min-height: 760px;
+
+        &__inner {
+            width: calc(100% - 80px);
+            min-height: 760px;
+        }
+
+        &__content {
+            width: 45%;
+            max-width: 590px;
+        }
+
+        &__description {
+            max-width: 480px;
+
+            font-size: 15px;
+        }
+    }
+
+    .store {
+        padding: 110px 50px;
+
+        &__inner {
+            max-width: 1400px;
+        }
+
+        &__heading {
+            margin-bottom: 55px;
+        }
+
+        &__title {
+            font-size: 72px;
+        }
+
+        &__content {
+            grid-template-columns:
+                minmax(0, 1.7fr) minmax(320px, 1fr);
+            gap: 60px;
+        }
+
+        &__name {
+            font-size: 46px;
+        }
+
+        &__description {
+            font-size: 14px;
+        }
+    }
+}
+
+
+/* ========================================
+   1440px 이하
+======================================== */
+
+@media (max-width: $desktop) {
+    .category {
+        &__name {
+            font-size: 40px;
+        }
+    }
+}
+
+
+/* ========================================
+    1400px 이하
+======================================== */
+
+@media (max-width: 1400px) {
+
+    .header {
+        width: 100%;
+        height: 110px;
+
+        background-color: $color-cream;
+        border-bottom: 1px solid rgba($color-black, 0.09);
+
+        .header__inner {
+            width: 100%;
+            height: 100%;
+            padding: 0 76px;
+        }
+
+        .header__logo {
+            font-size: 46px;
+        }
+
+        .header__nav {
+            ul {
+                gap: 90px;
+            }
+
+            a {
+                font-size: 18px;
+
+
+                &:hover {
+                    padding-bottom: 5px;
+                    border-bottom: 2px solid $color-black;
+                    font-weight: 700;
+                }
+            }
+
+        }
+
+        .header__utils {
+            gap: 28px;
+
+            button {
+                width: 30px;
+                height: 30px;
+            }
+
+            .material-symbols-outlined {
+                font-size: 32px;
+            }
+        }
+    }
+
+    .hero {
+        position: relative;
+
+        width: 100%;
+        height: calc(100vh - 110px);
+        min-height: 900px;
+        overflow: hidden;
+
+        &__content {
+            position: relative;
+
+            display: block;
+
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+        }
+
+        &__gallery,
+        &__small-image,
+        &__image-overlay,
+        &__label {
+            display: none;
+        }
+
+        /* 문구 영역 */
+        &__left-visual {
+            position: absolute;
+            inset: 0;
+            z-index: 5;
+
+            display: flex;
+            align-items: center;
+
+            width: 100%;
+            height: 100%;
+            padding: 70px 76px 40px;
+
+            pointer-events: none;
+        }
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            width: 100%;
+            max-width: 680px;
+            margin: 0;
+
+            pointer-events: auto;
+        }
+
+        &__eyebrow {
+            display: block;
+
+            margin-bottom: 22px;
+
+            color: rgba($color-black, 0.65);
+
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+        }
+
+        &__title {
+            color: $color-black;
+
+            font-size: 82px;
+            font-weight: 400;
+            line-height: 0.94;
+            letter-spacing: -0.04em;
+        }
+
+        &__description {
+            margin-top: 25px;
+
+            color: rgba($color-black, 0.7);
+
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        &__button {
+            position: relative;
+            inset: auto;
+            z-index: 6;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: auto;
+            height: 52px;
+            aspect-ratio: auto;
+
+            margin-top: 35px;
+            padding: 0 32px;
+
+            border-radius: 13px;
+
+            span {
+                font-size: 13px;
+                white-space: nowrap;
+            }
+        }
+
+        /* 배경 사진 영역 */
+        &__right-visual {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+            overflow: hidden;
+
+            background-color: #f3efe7;
+        }
+
+        /* 1400px 이하에서 Swiper 숨김 */
+        .heroSwiper {
+            display: none;
+        }
+
+        /* 반응형 picture 표시 */
+        &__responsive-picture {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+        }
+
+        &__responsive-image {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .brand-origin {
+        min-height: 720px;
+
+        &__background {
+            object-position: 25% center;
+        }
+
+        &__inner {
+            width: calc(100% - 70px);
+            min-height: 720px;
+        }
+
+        &__content {
+            width: 47%;
+            max-width: 540px;
+
+            padding: 75px 0;
+        }
+
+        &__title {
+            font-size: 124px;
+        }
+
+        &__description {
+            margin-top: 30px;
+            padding-top: 25px;
+
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        &__link {
+            margin-top: 32px;
+        }
+
+        &__caption {
+            margin-top: 38px;
+        }
+    }
+
+    .breadcrumb {
+        width: calc(100% - 80px);
+        padding: 145px 0 42px;
+    }
+
+    .product-detail {
+        grid-template-columns: minmax(0, 52%) minmax(0, 48%);
+
+        padding: 0 40px 130px;
+
+        &__gallery {
+            padding-left: 20px;
+        }
+
+        &__information {
+            padding: 30px 10px 20px 60px;
+        }
+
+        &__title {
+            font-size: 64px;
+        }
+
+        &__description {
+            margin-top: 25px;
+
+            font-size: 13px;
+        }
+
+        &__benefits {
+            margin-top: 30px;
+        }
+    }
+}
+
+
+/* ========================================
+   LAPTOP — 1200px
+======================================== */
+
+@media (max-width: $laptop) {
+
+    .header,
+    .header--subpage {
+        .header__inner {
+            padding: 0 50px;
+        }
+
+        .header__logo {
+            font-size: 42px;
+        }
+
+        .header__nav {
+            ul {
+                gap: 60px;
+            }
+
+            a {
+                font-size: 16px;
+            }
+        }
+
+        .header__utils {
+            gap: 22px;
+        }
+    }
+
+    .hero {
+        /* 히어로 전체 높이 */
+        height: 760px;
+        min-height: 0;
+
+        /* 히어로 안쪽 전체 영역 */
+        &__content {
+            height: 100%;
+            min-height: 0;
+        }
+
+        /* 이미지 위에 올라가는 문구 영역 */
+        &__left-visual {
+            height: 100%;
+            padding: 60px 50px 35px;
+        }
+
+        &__text {
+            max-width: 560px;
+        }
+
+        &__eyebrow {
+            margin-bottom: 18px;
+            font-size: 10px;
+        }
+
+        &__title {
+            font-size: 68px;
+        }
+
+        &__description {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        &__button {
+            height: 48px;
+            margin-top: 28px;
+            padding: 0 27px;
+
+            span {
+                font-size: 12px;
+            }
+        }
+
+        /* 반응형 이미지 영역 */
+        &__right-visual {
+            height: 100%;
+            min-height: 0;
+
+            /* 모든 이미지에 있던 최소 높이 해제 */
+            img {
+                height: 100%;
+                min-height: 0;
+            }
+        }
+
+        /* Swiper는 숨김 */
+        .heroSwiper {
+            display: none;
+        }
+
+        /* 1400px 이하에서 사용하는 단일 이미지 */
+        &__responsive-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+
+    .category {
+        &__title {
+            font-size: 80px;
+        }
+    }
+
+    .store {
+        padding: 100px 35px;
+
+        &__heading {
+            margin-bottom: 48px;
+        }
+
+        &__title {
+            font-size: 62px;
+        }
+
+        &__content {
+            grid-template-columns:
+                minmax(0, 1.5fr) minmax(300px, 1fr);
+            gap: 45px;
+        }
+
+        &__name {
+            font-size: 39px;
+        }
+
+        &__number {
+            margin-bottom: 25px;
+        }
+
+        &__description {
+            margin-top: 24px;
+
+            font-size: 13px;
+        }
+
+        &__details {
+            margin-top: 32px;
+        }
+
+        &__detail {
+            grid-template-columns: 110px minmax(0, 1fr);
+            gap: 15px;
+
+            padding: 15px 0;
+
+            dt {
+                font-size: 9px;
+            }
+
+            dd {
+                font-size: 12px;
+            }
+        }
+
+        &__link {
+            margin-top: 30px;
+        }
+    }
+
+    .products-hero {
+        &__description {
+            max-width: 450px;
+            margin-top: 33px;
+            font-size: 15px;
+        }
+    }
+
+    .products {
+        &__list {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+
+    .footer {
+        &__inner {
+            width: calc(100% - 64px);
+        }
+
+        &__top {
+            grid-template-columns:
+                minmax(0, 48%) minmax(0, 52%);
+
+            padding-top: 90px;
+        }
+
+        &__logo {
+            font-size: 160px;
+        }
+
+        &__newsletter {
+            min-width: 0;
+            padding-top: 8px;
+        }
+
+        &__middle {
+            gap: 40px;
+
+            margin-top: 75px;
+            padding: 45px 5px;
+        }
+
+        &__nav {
+            flex-shrink: 0;
+            gap: 55px;
+        }
+
+        &__nav-link {
+            font-size: 23px;
+        }
+
+        &__policy {
+            gap: 20px;
+        }
+
+        &__bottom {
+            gap: 35px;
+        }
+    }
+}
+
+/* ========================================
+   1100px 이하
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .hero {
+        position: relative;
+
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        overflow: hidden;
+
+        background-color: #f3efe7;
+
+        &__content {
+            position: relative;
+
+            display: block;
+
+            width: 100%;
+            height: auto;
+            min-height: 0;
+        }
+
+        /* 데스크톱용 작은 이미지 숨김 */
+        &__gallery,
+        &__small-image,
+        &__image-overlay,
+        &__label {
+            display: none;
+        }
+
+        /* 글자를 사진 위에 배치 */
+        &__left-visual {
+            position: absolute;
+            inset: 0;
+            z-index: 5;
+
+            display: flex;
+            align-items: center;
+
+            width: 100%;
+            height: 100%;
+            padding: 40px 5%;
+
+            pointer-events: none;
+        }
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            width: 58%;
+            max-width: 600px;
+            margin: 0;
+
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+
+            pointer-events: auto;
+        }
+
+        &__eyebrow {
+            display: block;
+
+            margin-bottom: 17px;
+
+            color: rgba($color-black, 0.65);
+
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+        }
+
+        &__title {
+            color: $color-black;
+
+            font-size: 54px;
+            font-weight: 400;
+            line-height: 0.96;
+            letter-spacing: -0.045em;
+
+            /* br에서만 줄바꿈 */
+            white-space: nowrap;
+
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+        }
+
+        &__description {
+            margin-top: 18px;
+
+            color: rgba($color-black, 0.72);
+
+            font-size: 12px;
+            line-height: 1.7;
+
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+        }
+
+        /* 기존 원형 버튼 해제 */
+        &__button {
+            position: relative;
+            top: auto;
+            right: auto;
+            bottom: auto;
+            left: auto;
+            z-index: 6;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: auto;
+            height: 44px;
+            aspect-ratio: auto;
+
+            margin-top: 24px;
+            padding: 0 23px;
+
+            border-radius: 11px;
+
+            span {
+                font-size: 10px;
+                white-space: nowrap;
+            }
+        }
+
+        /*
+         * absolute 제거
+         * 사진이 자신의 높이를 직접 만들게 함
+         */
+        &__right-visual {
+            position: relative;
+            inset: auto;
+            z-index: 1;
+
+            width: 100%;
+            height: auto;
+            min-height: 0;
+            overflow: visible;
+
+            background-color: #f3efe7;
+
+            img {
+                height: 100%;
+                min-height: 650px;
+            }
+        }
+
+        /* 기존 Swiper 숨김 */
+        .heroSwiper {
+            display: none;
+        }
+
+        /*
+         * 원본 사진 전체 표시
+         * height:auto이므로 사진이 잘리지 않음
+         */
+        &__responsive-image {
+            position: relative;
+
+            display: block;
+
+            width: 100%;
+            height: auto;
+            min-height: 0;
+
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+
+    .best-products {
+        padding: 110px 35px;
+
+        &__title {
+            font-size: 77px;
+        }
+
+        &__list {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 60px 25px;
+        }
+    }
+
+    .category {
+        padding: 90px 35px;
+
+        &__heading {
+            margin-bottom: 30px;
+        }
+
+        &__title {
+            font-size: 68px;
+        }
+
+        .categorySwiper {
+            width: 100%;
+            padding: 25px 0 45px;
+
+            overflow: visible;
+            touch-action: pan-y;
+        }
+
+        &__list {
+            display: flex;
+            gap: 0;
+
+            width: 100%;
+            min-height: 0;
+        }
+
+        &__item {
+            width: 390px;
+            max-width: 45vw;
+            flex-shrink: 0;
+
+            overflow: hidden;
+        }
+
+        &__link {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+        }
+
+        &__name {
+            bottom: 28px;
+            left: 24px;
+
+            font-size: 38px;
+        }
+    }
+
+    .brand-origin {
+        min-height: 680px;
+
+        &__background {
+            /*
+             * 왼쪽 인물을 기준으로 배경 위치 설정
+             */
+            object-position: 20% center;
+        }
+
+        &__overlay {
+            background:
+                linear-gradient(90deg,
+                    rgba(16, 14, 12, 0.12) 0%,
+                    rgba(16, 14, 12, 0.3) 36%,
+                    rgba(16, 14, 12, 0.82) 65%,
+                    rgba(16, 14, 12, 0.96) 100%);
+        }
+
+        &__inner {
+            width: calc(100% - 60px);
+            min-height: 680px;
+        }
+
+        &__content {
+            width: 49%;
+            max-width: 470px;
+
+            padding: 65px 0;
+        }
+
+        &__eyebrow {
+            margin-bottom: 20px;
+
+            font-size: 9px;
+        }
+
+        &__title {
+            font-size: 110px;
+            line-height: 0.86;
+        }
+
+        &__founder {
+            margin-top: 20px;
+
+            font-size: 9px;
+        }
+
+        &__description {
+            margin-top: 25px;
+            padding-top: 22px;
+
+            font-size: 13px;
+            line-height: 1.75;
+        }
+
+        &__link {
+            gap: 25px;
+
+            margin-top: 28px;
+
+            font-size: 12px;
+        }
+
+        &__caption {
+            margin-top: 32px;
+
+            font-size: 8px;
+        }
+    }
+
+    .breadcrumb {
+        width: calc(100% - 60px);
+        padding: 130px 0 32px;
+    }
+
+    .product-detail {
+        grid-template-columns: minmax(0, 48%) minmax(0, 52%);
+
+        padding: 0 30px 130px;
+
+        &__gallery {
+            display: flex;
+            align-items: flex-start;
+
+            padding-left: 0;
+        }
+
+        &__visual {
+            max-width: none;
+            aspect-ratio: 4 / 5;
+        }
+
+        &__information {
+            padding: 20px 25px 20px 60px;
+        }
+
+        &__eyebrow {
+            margin-bottom: 17px;
+
+            font-size: 10px;
+        }
+
+        &__title {
+            font-size: 52px;
+            line-height: 1;
+        }
+
+        &__description {
+            margin-top: 21px;
+
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        &__benefits {
+            margin-top: 26px;
+            padding: 18px 0;
+
+            li {
+                padding: 0 7px;
+
+                font-size: 12px;
+                line-height: 1.5;
+            }
+        }
+
+        &__option {
+            margin-top: 21px;
+        }
+
+        &__price {
+            margin-top: 20px;
+
+            font-size: 25px;
+        }
+
+        &__purchase {
+            grid-template-columns: 140px minmax(0, 1fr);
+            gap: 10px;
+
+            margin-top: 21px;
+        }
+
+        &__quantity,
+        &__cart-button {
+            height: 51px;
+        }
+
+        &__details {
+            margin-top: 25px;
+        }
+
+        &__detail {
+            summary {
+                padding: 17px 32px 17px 0;
+
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+
+/* ========================================
+   TABLET — 1024px
+======================================== */
+
+@media (max-width: $tablet) {
+
+    .header,
+    .header--subpage {
+        width: 100%;
+        height: 90px;
+
+        .header__inner {
+            padding: 0 30px;
+        }
+
+        .header__logo {
+            font-size: 38px;
+        }
+
+        .header__nav {
+            ul {
+                gap: 44px;
+            }
+
+            a {
+                font-size: 15px;
+            }
+        }
+
+        .header__utils {
+            gap: 18px;
+        }
+    }
+
+    .brand-origin {
+        &__title {
+            font-size: 88px;
+        }
+
+        &__description {
+            font-size: 12px;
+        }
+
+        &__link {
+            font-size: 11px;
+        }
+    }
+
+    .store {
+        padding: 90px 35px;
+
+        &__heading {
+            align-items: flex-start;
+
+            margin-bottom: 42px;
+        }
+
+        &__title {
+            font-size: 55px;
+        }
+
+        &__content {
+            grid-template-columns: 1fr;
+            gap: 45px;
+        }
+
+        &__visual {
+            width: 100%;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        &__information {
+            width: 100%;
+            max-width: 600px;
+            padding-bottom: 0;
+        }
+
+        &__name {
+            font-size: 45px;
+        }
+
+        &__description {
+            max-width: 600px;
+
+            font-size: 14px;
+        }
+
+        &__detail {
+            grid-template-columns: 180px minmax(0, 1fr);
+        }
+
+        &__link {
+            max-width: 680px;
+        }
+    }
+
+    .products-hero {
+        height: calc(72svh - 110px);
+        margin-top: 90px;
+
+        &__description {
+            max-width: 380px;
+            margin-top: 28px;
+
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+
+            pointer-events: none;
+            background: linear-gradient(90deg,
+                    rgba(236, 218, 196, 0.9) 0%,
+                    rgba(236, 218, 196, 0.65) 45%,
+                    rgba(236, 218, 196, 0.15) 75%,
+                    transparent 100%);
+        }
+
+        &__eyebrow {
+            font-size: 10px;
+        }
+    }
+
+    .footer {
+        &__inner {
+            width: calc(100% - 56px);
+        }
+
+        &__top {
+            grid-template-columns: 1fr;
+
+            padding-top: 80px;
+        }
+
+        &__logo {
+            font-size: 130px;
+        }
+
+        &__newsletter {
+            width: 65%;
+            padding-top: 72px;
+
+            >p:first-child {
+                font-size: 11px;
+            }
+
+            >p:nth-child(2) {
+                margin-top: 20px;
+
+                font-size: 14px;
+            }
+        }
+
+        &__form {
+            margin-top: 32px;
+        }
+
+        &__label {
+            font-size: 11px;
+        }
+
+        &__input {
+            height: 56px;
+        }
+
+        &__submit {
+            width: 58px;
+            height: 58px;
+
+            .material-symbols-outlined {
+                font-size: 54px;
+            }
+        }
+
+        &__middle {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 33px;
+
+            margin-top: 65px;
+            padding: 40px 0;
+        }
+
+        &__nav {
+            gap: 48px;
+        }
+
+        &__nav-link {
+            font-size: 21px;
+        }
+
+        &__utility {
+            width: 100%;
+
+            align-items: flex-start;
+            gap: 24px;
+        }
+
+        &__policy {
+            justify-content: flex-start;
+            gap: 20px 25px;
+        }
+
+        &__bottom {
+            min-height: auto;
+            padding: 30px 0;
+        }
+
+        &__notice {
+            max-width: 550px;
+        }
+    }
+}
+
+
+/* ========================================
+  900px 이하
+======================================== */
+@media (max-width: 900px) {
+
+    .hero {
+        &__left-visual {
+            padding: 30px 4%;
+        }
+
+        &__text {
+            width: 60%;
+            max-width: 490px;
+        }
+
+        &__eyebrow {
+            margin-bottom: 13px;
+            font-size: 8px;
+        }
+
+        &__title {
+            font-size: 52px;
+        }
+
+        &__description {
+            margin-top: 14px;
+            font-size: 10px;
+        }
+
+        &__button {
+            height: 39px;
+            margin-top: 19px;
+            padding: 0 18px;
+
+            span {
+                font-size: 9px;
+            }
+        }
+
+        &__right-visual {
+            img {
+                min-height: 590px;
+            }
+        }
+    }
+
+    .best-products {
+        &__title {
+            font-size: 65px;
+        }
+    }
+
+    .category {
+        padding: 80px 28px;
+
+        &__title {
+            font-size: 58px;
+        }
+
+        &__item {
+            width: 340px;
+            max-width: 48vw;
+        }
+
+        &__name {
+            font-size: 33px;
+        }
+    }
+
+    .products {
+        &__list {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    .breadcrumb {
+        width: calc(100% - 60px);
+        padding-bottom: 27px;
+    }
+
+    .product-detail {
+        grid-template-columns: 1fr;
+
+        padding: 0 30px 130px;
+
+        &__gallery {
+            width: 100%;
+            padding: 0;
+        }
+
+        &__visual {
+            width: 80%;
+            max-width: 760px;
+            height: auto;
+            aspect-ratio: auto;
+
+            margin: 0 auto;
+
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+
+        &__information {
+            width: 100%;
+            max-width: 720px;
+
+            margin: 0 auto;
+            padding: 65px 10px 0;
+        }
+
+        &__title {
+            font-size: 60px;
+        }
+
+        &__description {
+            max-width: 620px;
+
+            font-size: 13px;
+        }
+
+        &__purchase {
+            grid-template-columns: 160px minmax(0, 1fr);
+        }
+    }
+}
+
+
+/* ========================================
+   MOBILE — 768px
+======================================== */
+
+@media (max-width: $mobile) {
+
+    .header,
+    .header--subpage {
+        width: 100%;
+        height: 80px;
+
+        &__inner,
+        .header__inner {
+            padding: 0 22px;
+        }
+
+        &__logo,
+        .header__logo {
+            font-size: 33px;
+            letter-spacing: 0.04em;
+        }
+
+        &__nav,
+        .header__nav {
+            ul {
+                gap: 36px;
+            }
+
+            a {
+                padding-bottom: 4px;
+
+                font-size: 14px;
+                white-space: nowrap;
+
+                &:hover {
+                    padding-bottom: 4px;
+                    border-bottom-width: 2px;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        &__utils,
+        .header__utils {
+            gap: 10px;
+
+            button {
+                width: 28px;
+                height: 28px;
+
+                .material-symbols-outlined {
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+
+    .hero {
+        position: relative;
+
+        width: 100%;
+        height: calc(100svh - 80px);
+        min-height: 885px;
+        max-height: 900px;
+        overflow: hidden;
+
+        &__content {
+            position: relative;
+
+            display: block;
+
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+        }
+
+        &__gallery,
+        &__small-image,
+        &__image-overlay,
+        &__label {
+            display: none;
+        }
+
+        /* 모바일 문구 영역 */
+        &__left-visual {
+            position: absolute;
+            inset: 0;
+            z-index: 5;
+
+            display: flex;
+            align-items: flex-start;
+
+            width: 100%;
+            height: 100%;
+            padding: 190px 28px 35px;
+
+            pointer-events: none;
+        }
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            width: 82%;
+            max-width: 470px;
+            margin: 0;
+
+            pointer-events: auto;
+        }
+
+        &__eyebrow {
+            display: block;
+
+            margin-bottom: 14px;
+
+            color: rgba($color-black, 0.65);
+
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+        }
+
+        &__title {
+            color: $color-black;
+
+            font-size: 60px;
+            font-weight: 400;
+            line-height: 0.94;
+            letter-spacing: -0.045em;
+        }
+
+        &__description {
+            max-width: 330px;
+            margin-top: 17px;
+
+            color: rgba($color-black, 0.68);
+
+            font-size: 14px;
+            line-height: 1.65;
+            word-break: keep-all;
+        }
+
+        &__button {
+            position: relative;
+            inset: auto;
+            z-index: 6;
+
+            width: 188px;
+            height: 68px;
+            aspect-ratio: auto;
+
+            margin-top: 22px;
+            padding: 0 25px;
+
+            border-radius: 100%;
+
+            pointer-events: auto;
+
+            span {
+                font-size: 11px;
+                font-weight: 600;
+                white-space: nowrap;
+            }
+        }
+
+        /* 세로 이미지 영역 */
+        &__right-visual {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+            overflow: hidden;
+
+            background-color: #f3efe7;
+        }
+
+        .heroSwiper {
+            display: none;
+        }
+
+        &__responsive-picture {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+        }
+
+        &__responsive-image {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .category {
+        padding: 75px 24px 95px;
+
+        &__heading {
+            margin-bottom: 32px;
+        }
+
+        &__eyebrow {
+            margin-bottom: 12px;
+
+            font-size: 9px;
+        }
+
+        &__title {
+            font-size: 52px;
+            line-height: 0.95;
+        }
+
+        .categorySwiper {
+            width: 420px;
+            max-width: calc(100vw - 90px);
+            margin: 0 auto;
+            padding: 0;
+
+            overflow: visible;
+            touch-action: pan-y;
+        }
+
+        &__list {
+            display: flex;
+            gap: 0;
+
+            width: 100%;
+            min-height: 0;
+        }
+
+        &__item {
+            width: 100%;
+            max-width: none;
+            flex-shrink: 0;
+
+            overflow: hidden;
+            border-radius: 16px;
+        }
+
+        &__link {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+
+            border-radius: 16px;
+        }
+
+        &__image {
+            border-radius: 16px;
+        }
+
+        &__name {
+            bottom: 24px;
+            left: 22px;
+
+            font-size: 32px;
+        }
+
+        /*
+         * 터치 환경에서는 hover가 없으므로
+         * EXPLORE를 항상 표시
+         */
+        &__explore {
+            top: auto;
+            right: 16px;
+            bottom: 18px;
+            left: auto;
+
+            gap: 5px;
+            padding: 9px 12px;
+
+            opacity: 1;
+            visibility: visible;
+
+            transform: none;
+
+            .material-symbols-outlined {
+                font-size: 15px;
+            }
+        }
+
+        /*
+         * 모바일에서 hover 상태가 남는 현상 방지
+         */
+        &__link:hover {
+            .category__image--default {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+            }
+
+            .category__image--hover {
+                opacity: 0;
+                visibility: hidden;
+                transform: scale(1.04);
+            }
+
+            .category__explore {
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+            }
+        }
+
+        /*
+         * Swiper가 생성하는 카드 그림자
+         */
+        .swiper-slide-shadow {
+            border-radius: 16px;
+        }
+    }
+
+    .brand-origin {
+        min-height: 760px;
+
+        &__background {
+            /*
+             * 모바일에서는 왼쪽 인물과 작업 공간이
+             * 최대한 보이도록 위치 조절
+             */
+            object-position: 18% center;
+        }
+
+        /*
+         * 모바일은 텍스트를 아래에 배치하므로
+         * 세로 방향 그라데이션 사용
+         */
+        &__overlay {
+            background:
+                linear-gradient(180deg,
+                    rgba(16, 14, 12, 0.08) 0%,
+                    rgba(16, 14, 12, 0.16) 25%,
+                    rgba(16, 14, 12, 0.55) 50%,
+                    rgba(16, 14, 12, 0.9) 72%,
+                    rgba(16, 14, 12, 0.98) 100%);
+        }
+
+        &__inner {
+            align-items: flex-end;
+            justify-content: flex-start;
+
+            width: calc(100% - 48px);
+            min-height: 760px;
+        }
+
+        &__content {
+            width: 100%;
+            max-width: 560px;
+
+            padding: 280px 0 50px;
+        }
+
+        &__eyebrow {
+            margin-bottom: 17px;
+
+            font-size: 9px;
+        }
+
+        &__title {
+            font-size: 83px;
+            line-height: 0.88;
+        }
+
+        &__founder {
+            margin-top: 17px;
+
+            font-size: 9px;
+        }
+
+        &__description {
+            width: 80%;
+            max-width: 500px;
+            margin-top: 22px;
+            padding-top: 20px;
+
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        &__link {
+            gap: 22px;
+
+            margin-top: 25px;
+
+            font-size: 11px;
+        }
+
+        &__caption {
+            margin-top: 28px;
+
+            font-size: 8px;
+        }
+    }
+
+    .store {
+        padding: 80px 20px;
+
+        &__heading {
+            display: block;
+
+            margin-bottom: 35px;
+        }
+
+        &__eyebrow {
+            font-size: 9px;
+        }
+
+        &__title {
+            margin-top: 18px;
+
+            font-size: 48px;
+            line-height: 0.95;
+            text-align: left;
+        }
+
+        &__content {
+            gap: 35px;
+        }
+
+        &__visual {
+            width: 100%;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        &__information {
+            max-width: none;
+        }
+
+        &__number {
+            margin-bottom: 20px;
+
+            font-size: 9px;
+        }
+
+        &__name {
+            font-size: 38px;
+        }
+
+        &__description {
+            max-width: none;
+            margin-top: 20px;
+
+            font-size: 13px;
+            line-height: 1.75;
+        }
+
+        &__details {
+            margin-top: 28px;
+        }
+
+        &__detail {
+            grid-template-columns: 180px minmax(0, 1fr);
+            gap: 15px;
+
+            padding: 16px 0;
+
+            dt {
+                font-size: 9px;
+            }
+
+            dd {
+                font-size: 12px;
+            }
+        }
+
+        &__link {
+            max-width: none;
+            margin-top: 28px;
+
+            font-size: 12px;
+        }
+    }
+
+    .products-hero {
+        padding: 0;
+        margin-top: 80px;
+
+        &__background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            object-position: 100% center;
+        }
+
+        &__inner {
+            width: 100%;
+            height: 100%;
+            padding: 40px 50px;
+        }
+
+        &__title {
+            max-width: 440px;
+            font-size: clamp(50px, 8vw, 62px);
+            line-height: 0.92;
+        }
+
+        &__description {
+            max-width: 330px;
+            margin-top: 24px;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+    }
+
+    .products {
+        padding: 40px 24px 100px;
+
+        &__toolbar {
+            align-items: flex-start;
+            gap: 25px;
+        }
+
+        &__categories {
+            gap: 15px 22px;
+        }
+
+        &__list {
+            gap: 55px 15px;
+        }
+
+        &__name {
+            font-size: 15px;
+        }
+
+        &__description {
+            display: none;
+        }
+    }
+
+    .breadcrumb {
+        gap: 10px;
+
+        width: calc(100% - 40px);
+        padding: 115px 0 24px;
+
+        font-size: 9px;
+
+        white-space: nowrap;
+    }
+
+    .product-detail {
+        padding: 0 20px 70px;
+
+        &__information {
+            padding: 50px 4px 0;
+        }
+
+        &__eyebrow {
+            margin-bottom: 14px;
+
+            font-size: 9px;
+        }
+
+        &__title {
+            font-size: 49px;
+            line-height: 1.02;
+        }
+
+        &__description {
+            margin-top: 20px;
+
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        &__benefits {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+
+            margin-top: 25px;
+            padding: 17px 0;
+
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                min-height: 28px;
+                padding: 0 6px;
+
+                font-size: 12px;
+                line-height: 1.4;
+                word-break: keep-all;
+            }
+        }
+
+        &__option {
+            margin-top: 21px;
+        }
+
+        &__option-label {
+            font-size: 10px;
+        }
+
+        &__select {
+            padding: 11px 32px 13px 0;
+
+            font-size: 13px;
+        }
+
+        &__price {
+            margin-top: 19px;
+
+            font-size: 25px;
+        }
+
+        &__purchase {
+            grid-template-columns: 140px minmax(0, 1fr);
+            gap: 10px;
+
+            margin-top: 20px;
+        }
+
+        &__quantity {
+            max-width: none;
+            height: 51px;
+        }
+
+        &__cart-button {
+            height: 51px;
+
+            font-size: 12px;
+        }
+
+        &__details {
+            margin-top: 25px;
+        }
+
+        &__detail {
+            summary {
+                padding: 18px 32px 18px 0;
+
+                font-size: 12px;
+
+                &::after {
+                    font-size: 20px;
+                }
+            }
+
+            p {
+                padding: 0 25px 20px 0;
+
+                font-size: 11px;
+            }
+        }
+    }
+
+    .footer {
+        &__inner {
+            width: calc(100% - 40px);
+        }
+
+        &__top {
+            grid-template-columns: 1fr;
+
+            padding-top: 65px;
+        }
+
+        &__brand {
+            width: 100%;
+        }
+
+        &__logo {
+            font-size: 105px;
+        }
+
+        &__newsletter {
+            margin-top: 55px;
+            padding-top: 0;
+
+            >p:first-child {
+                font-size: 11px;
+            }
+
+            >p:nth-child(2) {
+                margin-top: 18px;
+
+                font-size: 14px;
+            }
+        }
+
+        &__form {
+            margin-top: 30px;
+        }
+
+        &__input-wrap {
+            gap: 12px;
+        }
+
+        &__input {
+            height: 54px;
+            font-size: 13px;
+        }
+
+        &__submit {
+            width: 52px;
+            height: 52px;
+
+            .material-symbols-outlined {
+                font-size: 48px;
+            }
+        }
+
+        &__middle {
+            grid-column: 1;
+
+            margin-top: 60px;
+            padding: 35px 0;
+        }
+
+        &__nav {
+            width: 100%;
+
+            justify-content: flex-start;
+            gap: 35px;
+        }
+
+        &__nav-link {
+            padding-bottom: 5px;
+
+            border-bottom-width: 1px;
+
+            font-size: 19px;
+        }
+
+        &__policy {
+            justify-content: flex-start;
+            gap: 17px 22px;
+        }
+
+        &__policy-link {
+            font-size: 10px;
+        }
+
+        &__social {
+            gap: 10px;
+        }
+
+        &__social-link {
+            width: 36px;
+            height: 36px;
+
+            font-size: 15px;
+        }
+
+        &__bottom {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+
+            padding: 28px 0;
+        }
+
+        &__notice {
+            max-width: 100%;
+
+            font-size: 9px;
+            text-align: left;
+        }
+    }
+}
+
+
+/* ========================================
+   650px 이하
+======================================== */
+
+@media (max-width: 650px) {
+    .best-products {
+        padding: 85px 20px;
+
+        &__heading {
+            display: block;
+            margin-bottom: 35px;
+        }
+
+        &__eyebrow {
+            margin-bottom: 12px;
+
+            font-size: 9px;
+        }
+
+        &__title {
+            font-size: 60px;
+            line-height: 0.95;
+        }
+
+        /* Swiper 영역 */
+        .bestProductsSwiper {
+            width: 100%;
+            overflow: hidden;
+
+            padding-bottom: 45px;
+        }
+
+        /* PC의 Grid를 모바일에서 Swiper flex 구조로 변경 */
+        &__list {
+            display: flex;
+            grid-template-columns: none;
+            gap: 0;
+
+            width: 100%;
+            margin: 0;
+        }
+
+        &__item {
+            flex-shrink: 0;
+
+            width: 100%;
+            min-width: 0;
+            height: auto;
+        }
+
+        &__card {
+            display: block;
+            width: 100%;
+        }
+
+        &__visual {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+
+            img {
+                width: 100%;
+                height: 100%;
+
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        &__number {
+            top: 16px;
+            left: 16px;
+        }
+
+        &__view {
+            right: 16px;
+            bottom: 16px;
+
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        &__information {
+            margin-top: 18px;
+        }
+
+        &__name {
+            font-size: 16px;
+        }
+
+        &__price {
+            padding-top: 21px;
+
+            font-size: 12px;
+        }
+
+        &__description {
+            font-size: 12px;
+        }
+
+        /* 모바일 페이지 점 */
+        &__pagination {
+            position: absolute;
+            right: 0;
+            bottom: 5px;
+            left: 0;
+            z-index: 5;
+
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+
+            .swiper-pagination-bullet {
+                width: 6px;
+                height: 6px;
+
+                margin: 0 !important;
+
+                background-color: rgba($color-black, 0.3);
+                opacity: 1;
+            }
+
+            .swiper-pagination-bullet-active {
+                width: 22px;
+
+                background-color: #566047;
+                border-radius: 10px;
+            }
+        }
+
+        &__more {
+            margin-top: 45px;
+        }
+
+        &__more-link {
+            min-width: 220px;
+        }
+    }
+
+    .category {
+        padding: 70px 20px 90px;
+
+        &__title {
+            font-size: 45px;
+        }
+
+        .categorySwiper {
+            width: 390px;
+            max-width: calc(100vw - 80px);
+        }
+
+        &__name {
+            font-size: 29px;
+        }
+    }
+}
+
+
+/* ========================================
+   600px 이하
+======================================== */
+
+@media (max-width: 600px) {
+
+    .hero {
+        &__title {
+            font-size: 50px;
+        }
+
+        &__description {
+            font-size: 13px;
+        }
+
+        &__button {
+            width: 165px;
+            height: 64px;
+
+            span {
+                font-size: 10px;
+            }
+        }
+    }
+
+    .product-detail {
+
+        &__information {
+            padding-top: 42px;
+        }
+
+        &__title {
+            font-size: 43px;
+        }
+
+        &__benefits {
+            li {
+                font-size: 11px;
+            }
+        }
+    }
+}
+
+
+/* ========================================
+   520px 이하
+======================================== */
+@media (max-width: 520px) {
+    .header--subpage {
+        border-bottom: 1px solid rgba($color-black, 0.09);
+    }
+
+    .products-hero {
+        display: flex;
+        flex-direction: column;
+
+        height: calc(77svh - 110px);
+        padding: 0;
+        margin-top: 80px;
+        overflow: hidden;
+
+        &::after {
+            display: none;
+        }
+
+        &__inner {
+            order: 1;
+
+            width: 100%;
+            height: auto;
+            padding: 50px 24px 45px;
+
+            background-color: #f1ede4;
+        }
+
+        &__eyebrow {
+            margin-bottom: 15px;
+            font-size: 9px;
+        }
+
+        &__title {
+            max-width: 100%;
+
+            font-size: clamp(40px, 12vw, 52px);
+            line-height: 0.92;
+        }
+
+        &__description {
+            max-width: 320px;
+            margin-top: 22px;
+
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        &__background {
+            position: relative;
+            inset: auto;
+            order: 2;
+
+            display: block;
+            width: 100%;
+            height: 430px;
+            aspect-ratio: auto;
+
+            object-fit: cover;
+            object-position: 100% center;
+
+            -webkit-mask-image: none;
+            mask-image: none;
+        }
+    }
+
+    .products {
+        &__toolbar {
+            flex-direction: column;
+        }
+
+        &__list {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+
+/* ========================================
+   SMALL MOBILE — 480px
+======================================== */
+
+@media (max-width: $small-mobile) {
+
+    .header,
+    .header--subpage {
+        width: 100%;
+        height: 108px;
+
+        &__inner,
+        .header__inner {
+            display: grid;
+            grid-template-columns:
+                minmax(0, 1fr) auto;
+            grid-template-rows: 62px 46px;
+
+            width: 100%;
+            height: 100%;
+            padding: 0;
+        }
+
+        &__logo,
+        .header__logo {
+            grid-column: 1;
+            grid-row: 1;
+
+            font-size: 31px;
+            padding-left: 18px;
+        }
+
+        &__utils,
+        .header__utils {
+            grid-column: 2;
+            grid-row: 1;
+
+            justify-self: end;
+            gap: 8px;
+            padding-right: 18px;
+
+            button {
+                width: 28px;
+                height: 28px;
+
+                .material-symbols-outlined {
+                    font-size: 27px;
+                }
+            }
+        }
+
+        &__nav,
+        .header__nav {
+            grid-column: 1 / -1;
+            grid-row: 2;
+
+            width: 100%;
+            height: 100%;
+
+            border-top:
+                1px solid rgba($color-black, 0.09);
+
+            ul {
+                justify-content: center;
+                gap: clamp(24px, 10vw, 42px);
+
+                width: 100%;
+                height: 100%;
+            }
+
+            a {
+                padding-bottom: 3px;
+
+                font-size: 12px;
+                white-space: nowrap;
+
+                &:hover {
+                    padding-bottom: 3px;
+                    border-bottom-width: 1px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    .hero {
+        position: relative;
+
+        width: 100%;
+
+        /* 기존 강제 높이 제거 */
+        height: auto;
+        min-height: 0;
+        max-height: none;
+
+        overflow: hidden;
+
+        &__content {
+            position: relative;
+
+            display: block;
+
+            width: 100%;
+            height: auto;
+            min-height: 0;
+        }
+
+        /* 문구는 이미지 위에 유지 */
+        &__left-visual {
+            position: absolute;
+            inset: 0;
+            z-index: 5;
+
+            display: flex;
+            align-items: flex-start;
+
+            width: 100%;
+            height: 100%;
+            padding: 180px 18px 25px;
+
+            pointer-events: none;
+        }
+
+        &__text {
+            width: 90%;
+            max-width: 350px;
+
+            pointer-events: auto;
+        }
+
+        &__eyebrow {
+            margin-bottom: 10px;
+
+            font-size: 7px;
+        }
+
+        &__title {
+            font-size: clamp(33px, 10vw, 42px);
+            line-height: 0.95;
+        }
+
+        &__description {
+            max-width: 260px;
+            margin-top: 14px;
+
+            font-size: 10px;
+        }
+
+        &__button {
+            width: 130px;
+            height: 45px;
+            margin-top: 18px;
+
+            span {
+                font-size: 8px;
+            }
+        }
+
+        /* 사진이 hero 높이를 직접 결정 */
+        &__right-visual {
+            position: relative;
+            inset: auto;
+            z-index: 1;
+
+            width: 100%;
+            height: auto;
+            min-height: 0;
+            overflow: hidden;
+
+            background-color: #f3efe7;
+
+            img {
+                display: block;
+
+                width: 100%;
+                height: auto;
+                min-height: 0;
+                max-width: none;
+
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+
+        &__responsive-picture {
+            display: block;
+
+            width: 100%;
+            height: auto;
+        }
+
+        &__responsive-image {
+            display: block;
+
+            width: 100%;
+            height: auto;
+            min-height: 0;
+
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+
+
+
+    .best-products {
+        padding: 65px 18px;
+
+        &__title {
+            font-size: 43px;
+        }
+
+        &__heading {
+            margin-bottom: 28px;
+        }
+    }
+
+    .category {
+        padding: 65px 18px 85px;
+
+        &__heading {
+            margin-bottom: 28px;
+        }
+
+        &__eyebrow {
+            font-size: 8px;
+        }
+
+        &__title {
+            font-size: 39px;
+        }
+
+        .categorySwiper {
+            width: 350px;
+            max-width: calc(100vw - 70px);
+        }
+
+        &__name {
+            bottom: 19px;
+            left: 17px;
+
+            font-size: 25px;
+        }
+
+        &__explore {
+            right: 12px;
+            bottom: 14px;
+
+            gap: 3px;
+            padding: 7px 9px;
+
+            font-size: 7px;
+
+            .material-symbols-outlined {
+                font-size: 13px;
+            }
+        }
+    }
+
+    .brand-origin {
+        min-height: 700px;
+
+        &__background {
+            object-position: 16% center;
+        }
+
+        &__inner {
+            width: calc(100% - 36px);
+            min-height: 700px;
+        }
+
+        &__content {
+            padding: 250px 0 38px;
+        }
+
+        &__eyebrow {
+            margin-bottom: 14px;
+
+            font-size: 8px;
+        }
+
+        &__title {
+            font-size: 54px;
+            line-height: 0.9;
+        }
+
+        &__founder {
+            margin-top: 14px;
+
+            font-size: 8px;
+        }
+
+        &__description {
+            width: 80%;
+            margin-top: 18px;
+            padding-top: 17px;
+
+            font-size: 11px;
+            line-height: 1.65;
+        }
+
+        &__link {
+            gap: 15px;
+
+            margin-top: 21px;
+            padding-bottom: 6px;
+
+            font-size: 10px;
+
+            span:last-child {
+                font-size: 14px;
+            }
+        }
+
+        &__caption {
+            margin-top: 22px;
+
+            font-size: 7px;
+        }
+    }
+
+    .store {
+        padding: 65px 18px 75px;
+
+        &__heading {
+            margin-bottom: 28px;
+        }
+
+        &__eyebrow {
+            font-size: 8px;
+        }
+
+        &__title {
+            margin-top: 14px;
+
+            font-size: 39px;
+            line-height: 0.96;
+        }
+
+        &__content {
+            gap: 28px;
+        }
+
+        &__number {
+            margin-bottom: 15px;
+
+            font-size: 8px;
+        }
+
+        &__name {
+            font-size: 32px;
+            line-height: 1;
+        }
+
+        &__description {
+            margin-top: 17px;
+
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        &__details {
+            margin-top: 24px;
+        }
+
+        &__detail {
+            grid-template-columns: 100px minmax(0, 1fr);
+            gap: 12px;
+
+            padding: 14px 0;
+
+            dt {
+                font-size: 8px;
+            }
+
+            dd {
+                font-size: 11px;
+                line-height: 1.6;
+            }
+        }
+
+        &__link {
+            margin-top: 24px;
+            padding-bottom: 10px;
+
+            font-size: 11px;
+
+            .material-symbols-outlined {
+                font-size: 17px;
+            }
+        }
+    }
+
+    .products-hero {
+        height: auto;
+
+        &__inner {
+            min-height: 260px;
+            padding: 45px 20px 38px;
+        }
+
+        &__title {
+            font-size: 39px;
+        }
+
+        &__description {
+            max-width: 220px;
+            font-size: 10px;
+        }
+
+        &__background {
+            width: 100%;
+            height: 200px;
+            aspect-ratio: 1 / 1;
+
+            object-fit: cover;
+        }
+    }
+
+    .breadcrumb {
+        gap: 7px;
+
+        width: calc(100% - 32px);
+        padding: 130px 0 20px;
+
+        font-size: 8px;
+
+        overflow: hidden;
+
+        a,
+        span {
+            flex-shrink: 0;
+        }
+
+        &__product {
+            min-width: 0;
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+
+    .product-detail {
+        padding: 0 16px 60px;
+
+        &__information {
+            padding: 38px 0 0;
+        }
+
+        &__eyebrow {
+            margin-bottom: 12px;
+
+            font-size: 8px;
+        }
+
+        &__title {
+            font-size: 37px;
+            line-height: 1.05;
+        }
+
+        &__description {
+            margin-top: 18px;
+
+            font-size: 11px;
+        }
+
+        &__benefits {
+            margin-top: 22px;
+            padding: 14px 0;
+
+            li {
+                min-height: 25px;
+                padding: 0 3px;
+
+                font-size: 10px;
+            }
+        }
+
+        &__option {
+            margin-top: 19px;
+        }
+
+        &__price {
+            margin-top: 18px;
+
+            font-size: 24px;
+        }
+
+        /*
+         * 수량과 장바구니 버튼을
+         * 위아래로 배치
+         */
+        &__purchase {
+            grid-template-columns: 1fr;
+            gap: 10px;
+
+            margin-top: 19px;
+        }
+
+        &__quantity {
+            width: 100%;
+            height: 49px;
+        }
+
+        &__cart-button {
+            width: 100%;
+            height: 52px;
+        }
+
+        &__details {
+            margin-top: 23px;
+        }
+    }
+
+    .footer {
+        &__inner {
+            width: calc(100% - 32px);
+        }
+
+        &__top {
+            padding-top: 55px;
+        }
+
+        &__logo {
+            font-size: 82px;
+
+            letter-spacing: 0.02em;
+        }
+
+        &__newsletter {
+            width: 90%;
+            margin-top: 45px;
+
+            >p:nth-child(2) {
+                max-width: 290px;
+
+                font-size: 13px;
+            }
+        }
+
+        &__form {
+            margin-top: 26px;
+        }
+
+        &__input {
+            min-width: 0;
+            height: 50px;
+
+            font-size: 12px;
+        }
+
+        &__submit {
+            width: 46px;
+            height: 46px;
+
+            .material-symbols-outlined {
+                font-size: 42px;
+            }
+        }
+
+        &__middle {
+            gap: 30px;
+
+            margin-top: 50px;
+            padding: 30px 0;
+        }
+
+        &__nav {
+            gap: 35px;
+        }
+
+        &__nav-link {
+            font-size: 17px;
+        }
+
+        &__utility {
+            gap: 20px;
+        }
+
+        &__policy {
+            gap: 14px 18px;
+        }
+
+        &__policy-link {
+            font-size: 9px;
+        }
+
+        &__bottom {
+            padding: 24px 0;
+        }
+
+        &__copyright {
+            font-size: 9px;
+        }
+
+        &__notice {
+            font-size: 8px;
+            line-height: 1.6;
+        }
+    }
+}
+
+
+/* ========================================
+
+======================================== */
+@media (max-width: 378px) {
+
+    .header {
+        width: 100%;
+
+        .header__inner {
+            width: 100%;
+        }
+
+        .header__logo {
+            flex-shrink: 0;
+            font-size: 32px;
+        }
+
+        .header__utils {
+            flex-shrink: 0;
+            gap: 12px;
+        }
+
+        .header__nav {
+            width: 100%;
+
+            ul {
+                justify-content: center;
+                gap: 34px;
+            }
+        }
+    }
+
+    .hero {
+        width: 100%;
+        min-width: 0;
+
+        &__content,
+        &__left-visual,
+        &__right-visual,
+        &__responsive-picture,
+        &__responsive-image {
+            width: 100%;
+            min-width: 0;
+            max-width: 100%;
+        }
+
+        &__left-visual {
+            padding-right: 18px;
+            padding-left: 18px;
+        }
+
+        &__text {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        &__title {
+            max-width: 100%;
+            font-size: clamp(29px, 9.2vw, 35px);
+            line-height: 0.95;
+            letter-spacing: -0.045em;
+            white-space: normal;
+        }
+
+        &__responsive-picture {
+            display: block;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        &__responsive-image {
+            display: block;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .best-product {
+        width: 100%;
+        max-width: 100%;
+        padding-right: 18px;
+        padding-left: 18px;
+        overflow: hidden;
+
+        &__inner {
+            width: 100%;
+            min-width: 0;
+            max-width: 100%;
+        }
+
+        &__title {
+            max-width: 100%;
+            font-size: clamp(43px, 14vw, 53px);
+            line-height: 0.95;
+            white-space: normal;
+            overflow-wrap: anywhere;
+        }
+    }
+}
+
+
+/* ========================================
+   REVEAL ANIMATION — MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .reveal--left,
+    .reveal--right {
+        transform: translateY(25px);
+    }
+
+    .reveal--left.is-visible,
+    .reveal--right.is-visible {
+        transform: translateY(0);
+    }
+}

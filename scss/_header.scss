@@ -1,0 +1,143 @@
+@use "./variables" as *;
+
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+
+  width: 55%;
+  height: 110px;
+
+  background-color: $color-cream;
+  border-bottom: 2px solid $color-cream;
+
+
+  &__inner {
+    width: 100%;
+    height: 100%;
+    padding: 10px 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    font-family: "DM Serif Display", serif;
+    font-size: 43px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: 0.07em;
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      gap: 54px;
+      align-items: center;
+    }
+
+    a {
+      font-size: 16px;
+      font-weight: 400;
+
+      &:hover {
+        padding-bottom: 5px;
+        border-bottom: 2px solid $color-black;
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__utils {
+
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    button {
+      width: 32px;
+      height: 32px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0;
+      background-color: transparent;
+      border: none;
+      color: inherit;
+
+
+      .material-symbols-outlined {
+        font-size: 34px;
+
+        font-variation-settings:
+          'FILL' 0,
+          'wght' 200,
+          'GRAD' -25,
+          'opsz' 24
+      }
+    }
+  }
+}
+
+/* ========================================
+   SUBPAGE HEADER — 제품 페이지 헤더
+======================================== */
+
+.header--subpage {
+  width: 100%;
+  height: 110px;
+
+  background-color: $color-cream;
+  border-bottom: 1px solid $color-cream;
+
+  .header__inner {
+    width: 100%;
+    height: 100%;
+    padding: 0 76px;
+
+    &:hover {
+      background-color: transparent;
+      color: $color-black;
+      border-bottom: #000;
+    }
+  }
+
+  .header__logo {
+    font-size: 46px;
+  }
+
+  .header__nav {
+    ul {
+      gap: 90px;
+    }
+
+    a {
+      font-size: 18px;
+
+
+      &:hover {
+        padding-bottom: 5px;
+        border-bottom: 2px solid $color-black;
+        font-weight: 700;
+      }
+    }
+
+  }
+
+  .header__utils {
+    gap: 28px;
+
+    button {
+      width: 30px;
+      height: 30px;
+    }
+
+    .material-symbols-outlined {
+      font-size: 32px;
+    }
+  }
+}

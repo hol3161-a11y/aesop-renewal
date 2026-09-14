@@ -1,0 +1,485 @@
+<!-- 제품 상세 페이지 -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>리피 페이셜 크림 | Aesop Renewal</title>
+
+    <!-- Pretendard -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+
+    <!-- Material Symbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- 영문 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Libre+Caslon+Display&display=swap">
+
+    <!-- 컴파일된 CSS -->
+    <link rel="stylesheet" href="./scss/style.css">
+</head>
+
+<body>
+    <!-- 위로 이동 버튼 -->
+    <button type="button" class="top-button" aria-label="페이지 맨 위로 이동">
+        <span class="material-symbols-outlined">
+            vertical_align_top
+        </span>
+    </button>
+
+    <!-- 공통 헤더 -->
+    <header class="header header--subpage header--detail">
+        <div class="header__inner">
+            <h1 class="header__logo">
+                <a href="./index.html">
+                    Aēsop
+                </a>
+            </h1>
+
+            <nav class="header__nav" aria-label="주요 메뉴">
+                <ul>
+                    <li>
+                        <a href="./products.html">
+                            제품
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./index.html#brand-story">
+                            브랜드
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./index.html#store">
+                            스토어
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header__utils">
+                <!-- 검색창 열기 -->
+                <button type="button" class="header__search-button" aria-label="검색창 열기" aria-expanded="false">
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
+                </button>
+
+                <!-- 장바구니 열기 -->
+                <button type="button" class="header__cart-button" aria-label="장바구니 열기" aria-expanded="false">
+                    <span class="material-symbols-outlined">
+                        shopping_bag
+                    </span>
+
+                    <!-- 장바구니 수량 -->
+                    <span class="header__cart-count" aria-label="장바구니 상품 수량">
+                        0
+                    </span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    </header>
+
+    <!-- 검색창 -->
+    <section class="search-panel" aria-hidden="true" aria-label="제품 검색">
+        <div class="search-panel__inner">
+            <div class="search-panel__heading">
+                <p class="search-panel__eyebrow">
+                    SEARCH OUR RANGE
+                </p>
+
+                <button type="button" class="search-panel__close" aria-label="검색창 닫기">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </button>
+            </div>
+
+            <form class="search-panel__form">
+                <label for="site-search" class="search-panel__label">
+                    무엇을 찾고 계신가요?
+                </label>
+
+                <div class="search-panel__input-wrap">
+                    <input type="search" id="site-search" class="search-panel__input" placeholder="제품명을 입력해 주세요"
+                        autocomplete="off">
+
+                    <button type="submit" class="search-panel__submit" aria-label="검색하기">
+                        <span class="material-symbols-outlined">
+                            search
+                        </span>
+                    </button>
+                </div>
+            </form>
+
+            <div class="search-panel__keywords">
+                <span>추천 검색어</span>
+
+                <button type="button" data-keyword="페이셜 크림">
+                    페이셜 크림
+                </button>
+
+                <button type="button" data-keyword="핸드 밤">
+                    핸드 밤
+                </button>
+
+                <button type="button" data-keyword="세럼">
+                    세럼
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 장바구니 패널 -->
+    <aside class="cart-panel" aria-hidden="true" aria-label="장바구니">
+        <div class="cart-panel__heading">
+            <div>
+                <p class="cart-panel__eyebrow">
+                    YOUR SELECTION
+                </p>
+
+                <h2 class="cart-panel__title">
+                    장바구니
+                </h2>
+            </div>
+
+            <button type="button" class="cart-panel__close" aria-label="장바구니 닫기">
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+            </button>
+        </div>
+
+        <!-- 장바구니가 비어 있을 때 -->
+        <div class="cart-panel__empty">
+            <span class="material-symbols-outlined">
+                shopping_bag
+            </span>
+
+            <p>
+                장바구니가 비어 있습니다.
+            </p>
+
+        </div>
+
+        <!-- 제품을 담았을 때 -->
+        <div class="cart-panel__result">
+            <div class="cart-panel__result-icon">
+                <span class="material-symbols-outlined">
+                    check
+                </span>
+            </div>
+
+            <p class="cart-panel__result-title">
+                상품이 장바구니에 담겼습니다.
+            </p>
+
+            <p class="cart-panel__result-count">
+                현재 상품 <strong>0</strong>개
+            </p>
+
+            <button type="button" class="cart-panel__demo-button">
+                결제하기
+            </button>
+
+            <p class="cart-panel__demo-notice">
+                포트폴리오용 장바구니 데모입니다.
+            </p>
+        </div>
+    </aside>
+
+    <!-- 패널이 열렸을 때 뒤쪽 어두운 배경 -->
+    <div class="site-overlay"></div>
+
+    <!-- 제품 상세 페이지 -->
+    <main class="detail-page">
+
+        <!-- 현재 페이지 위치 -->
+        <nav class="breadcrumb" aria-label="현재 페이지 위치">
+            <a href="./index.html">
+                HOME
+            </a>
+
+            <span>/</span>
+
+            <a href="./products.html#skin-care" class="breadcrumb__category">
+                SKIN CARE
+            </a>
+
+            <span>/</span>
+
+            <span class="breadcrumb__type">
+                MOISTURISER
+            </span>
+        </nav>
+
+        <!-- 제품 정보 -->
+        <section class="product-detail">
+
+            <!-- 왼쪽 제품 사진 -->
+            <div class="product-detail__gallery">
+                <figure class="product-detail__visual">
+                    <img src="./images/products/product-cream.png" alt="앰버색 용기에 담긴 리피 페이셜 크림" class="product-detail__image">
+                </figure>
+            </div>
+
+            <!-- 오른쪽 제품 정보 -->
+            <div class="product-detail__information">
+                <p class="product-detail__eyebrow">
+                    FACIAL HYDRATION
+                </p>
+
+                <h2 class="product-detail__title">
+                    리피 페이셜 크림
+                </h2>
+
+                <p class="product-detail__description">
+                    식물성 보습 성분과 항산화 성분이 피부에 깊은 수분을
+                    공급하고, 피부 보호막을 편안하게 감싸 부드럽고 건강한
+                    피부로 가꾸어주는 데일리 페이셜 크림입니다.
+                </p>
+
+                <!-- 제품 특징 -->
+                <ul class="product-detail__benefits">
+                    <li>
+                        깊은 보습
+                    </li>
+
+                    <li>
+                        피부 장벽 강화
+                    </li>
+
+                    <li>
+                        부드러운 마무리감
+                    </li>
+                </ul>
+
+                <!-- 제품 용량 -->
+                <div class="product-detail__option">
+                    <label for="product-size" class="product-detail__option-label">
+                        사이즈
+                    </label>
+
+                    <div class="product-detail__select-wrap">
+                        <select id="product-size" class="product-detail__select">
+                            <option value="60" data-price="67000">
+                                60 mL
+                            </option>
+
+                            <option value="100" data-price="98000">
+                                100 mL
+                            </option>
+                        </select>
+
+                        <span class="material-symbols-outlined">
+                            expand_more
+                        </span>
+                </div>
+            </div>
+
+            <!-- 가격 -->
+            <p class="product-detail__price">
+                ₩67,000
+            </p>
+
+            <!-- 수량과 장바구니 -->
+            <div class="product-detail__purchase">
+                <div class="product-detail__quantity">
+                    <!-- 수량 줄이기 -->
+                    <button type="button" class="product-detail__quantity-button" data-action="decrease"
+                        aria-label="수량 줄이기">
+                        −
+                    </button>
+
+                    <!-- 현재 수량 -->
+                    <span class="product-detail__quantity-number">
+                        1
+                    </span>
+
+                    <!-- 수량 늘리기 -->
+                    <button type="button" class="product-detail__quantity-button" data-action="increase"
+                        aria-label="수량 늘리기">
+                        +
+                    </button>
+                </div>
+
+                <button type="button" class="product-detail__cart-button">
+                    <span>
+                        장바구니 담기
+                    </span>
+                </button>
+            </div>
+
+            <!-- 제품 상세 정보 -->
+            <div class="product-detail__details">
+                <details class="product-detail__detail">
+                    <summary>
+                        제품 설명
+                    </summary>
+
+                    <p>
+                        건조하고 민감해진 피부를 편안하게 감싸며
+                        오랫동안 촉촉한 보습감을 유지해 줍니다.
+                    </p>
+                </details>
+
+                <details class="product-detail__detail">
+                    <summary>
+                        사용 방법
+                    </summary>
+
+                    <p>
+                        세안 후 토너와 세럼을 사용한 다음 적당량을
+                        덜어 얼굴과 목에 부드럽게 펴 발라주세요.
+                    </p>
+                </details>
+
+                <details class="product-detail__detail">
+                    <summary>
+                        주요 성분
+                    </summary>
+
+                    <p>
+                        로즈메리잎 추출물, 만다린 오일,
+                        식물성 보습 성분을 함유하고 있습니다.
+                    </p>
+                </details>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 공통 푸터 -->
+    <footer class="footer">
+        <div class="footer__inner">
+
+            <!-- 푸터 상단 -->
+            <div class="footer__top">
+
+                <!-- 브랜드 로고 -->
+                <div class="footer__brand">
+                    <a href="./index.html" class="footer__logo">
+                        Aēsop
+                    </a>
+                </div>
+
+                <!-- 뉴스레터 -->
+                <div class="footer__newsletter">
+                    <p class="footer__eyebrow">
+                        STAY IN TOUCH
+                    </p>
+
+                    <p class="footer__description">
+                        새로운 제품과 브랜드 소식을 받아보세요.
+                    </p>
+
+                    <form class="footer__form">
+                        <label for="footer-email" class="footer__label">
+                            EMAIL ADDRESS
+                        </label>
+
+                        <div class="footer__input-wrap">
+                            <input type="email" id="footer-email" class="footer__input" placeholder="이메일 주소를 입력해 주세요"
+                                required>
+
+                            <button type="submit" class="footer__submit" aria-label="뉴스레터 신청">
+                                <span class="material-symbols-outlined">
+                                    arrow_circle_right
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- 푸터 가운데 -->
+            <div class="footer__middle">
+
+                <!-- 주요 메뉴 -->
+                <nav class="footer__nav" aria-label="하단 주요 메뉴">
+                    <a href="./products.html" class="footer__nav-link">
+                        제품
+                    </a>
+
+                    <a href="./index.html#brand-story" class="footer__nav-link">
+                        브랜드
+                    </a>
+
+                    <a href="./index.html#store" class="footer__nav-link">
+                        스토어
+                    </a>
+                </nav>
+
+                <!-- 정책과 SNS -->
+                <div class="footer__utility">
+                    <nav class="footer__policy" aria-label="사이트 정책">
+                        <button type="button" class="footer__policy-link">
+                            개인정보 처리방침
+                        </button>
+
+                        <button type="button" class="footer__policy-link">
+                            쿠키 정책
+                        </button>
+
+                        <button type="button" class="footer__policy-link">
+                            이용약관
+                        </button>
+
+                        <button type="button" class="footer__policy-link">
+                            접근성
+                        </button>
+                    </nav>
+
+                    <!-- SNS -->
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#" class="footer__social-link" aria-label="X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+
+                        <a href="#" class="footer__social-link" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="#" class="footer__social-link" aria-label="문의하기">
+                            <i class="fa-regular fa-comment"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 푸터 하단 -->
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © 2026 AESOP RENEWAL
+                </p>
+
+                <p class="footer__notice">
+                    본 사이트는 개인 포트폴리오 목적으로 제작한 비공식 리뉴얼
+                    프로젝트이며, Aesop 공식 사이트와 관련이 없습니다.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

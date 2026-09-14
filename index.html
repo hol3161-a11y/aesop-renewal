@@ -1,0 +1,718 @@
+<!-- 메인 페이지(메인 배너, 브랜드 소개, 인기 제품, 카테고리, 매장 안내) -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aesop Website Renewal</title>
+
+    <!-- Pretendard -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+
+    <!-- Material Symbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- 영문 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Libre+Caslon+Display&display=swap">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./scss/style.css">
+</head>
+
+<body>
+    <!-- 위로 이동 버튼 -->
+    <button type="button" class="top-button" aria-label="페이지 맨 위로 이동">
+        <span class="material-symbols-outlined">
+            vertical_align_top
+        </span>
+    </button>
+
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="header__inner">
+            <h1 class="header__logo">
+                <a href="./index.html">Aēsop</a>
+            </h1>
+
+            <nav class="header__nav" aria-label="주요 메뉴">
+                <ul>
+                    <li>
+                        <a href="./products.html">제품</a>
+                    </li>
+
+                    <li>
+                        <a href="#brand-story">브랜드</a>
+                    </li>
+
+                    <li>
+                        <a href="#store">스토어</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header__utils">
+                <!-- 검색창 열기 -->
+                <button type="button" class="header__search-button" aria-label="검색창 열기" aria-expanded="false">
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
+                </button>
+
+                <!-- 장바구니 열기 -->
+                <button type="button" class="header__cart-button" aria-label="장바구니 열기" aria-expanded="false">
+                    <span class="material-symbols-outlined">
+                        shopping_bag
+                    </span>
+
+                    <!-- 장바구니 수량 -->
+                    <span class="header__cart-count" aria-label="장바구니 상품 수량">
+                        0
+                    </span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 검색창 -->
+    <section class="search-panel" aria-hidden="true" aria-label="제품 검색">
+        <div class="search-panel__inner">
+            <div class="search-panel__heading">
+                <p class="search-panel__eyebrow">
+                    SEARCH OUR RANGE
+                </p>
+
+                <button type="button" class="search-panel__close" aria-label="검색창 닫기">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </button>
+            </div>
+
+            <form class="search-panel__form">
+                <label for="site-search" class="search-panel__label">
+                    무엇을 찾고 계신가요?
+                </label>
+
+                <div class="search-panel__input-wrap">
+                    <input type="search" id="site-search" class="search-panel__input" placeholder="제품명을 입력해 주세요"
+                        autocomplete="off">
+
+                    <button type="submit" class="search-panel__submit" aria-label="검색하기">
+                        <span class="material-symbols-outlined">
+                            search
+                        </span>
+                    </button>
+                </div>
+            </form>
+
+            <div class="search-panel__keywords">
+                <span>추천 검색어</span>
+
+                <button type="button" data-keyword="페이셜 크림">
+                    페이셜 크림
+                </button>
+
+                <button type="button" data-keyword="핸드 밤">
+                    핸드 밤
+                </button>
+
+                <button type="button" data-keyword="세럼">
+                    세럼
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 장바구니 패널 -->
+    <aside class="cart-panel" aria-hidden="true" aria-label="장바구니">
+        <div class="cart-panel__heading">
+            <div>
+                <p class="cart-panel__eyebrow">
+                    YOUR SELECTION
+                </p>
+
+                <h2 class="cart-panel__title">
+                    장바구니
+                </h2>
+            </div>
+
+            <button type="button" class="cart-panel__close" aria-label="장바구니 닫기">
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+            </button>
+        </div>
+
+        <!-- 장바구니가 비어 있을 때 -->
+        <div class="cart-panel__empty">
+            <span class="material-symbols-outlined">
+                shopping_bag
+            </span>
+
+            <p>
+                장바구니가 비어 있습니다.
+            </p>
+
+        </div>
+
+        <!-- 제품을 담았을 때 -->
+        <div class="cart-panel__result">
+            <div class="cart-panel__result-icon">
+                <span class="material-symbols-outlined">
+                    check
+                </span>
+            </div>
+
+            <p class="cart-panel__result-title">
+                상품이 장바구니에 담겼습니다.
+            </p>
+
+            <p class="cart-panel__result-count">
+                현재 상품 <strong>0</strong>개
+            </p>
+
+            <button type="button" class="cart-panel__demo-button">
+                결제하기
+            </button>
+
+            <p class="cart-panel__demo-notice">
+                포트폴리오용 장바구니 데모입니다.
+            </p>
+        </div>
+    </aside>
+
+    <!-- 패널이 열렸을 때 뒤쪽 어두운 배경 -->
+    <div class="site-overlay"></div>
+
+    <main>
+        <!-- 메인 비주얼 -->
+        <section class="hero">
+            <div class="hero__content">
+
+                <!-- 왼쪽 콘텐츠 -->
+                <div class="hero__left-visual">
+                    <div class="hero__gallery">
+
+                        <!-- 첫 번째 이미지 -->
+                        <figure class="hero__small-image" tabindex="0">
+                            <img src="./images/main/hero-botanical.jpg" alt="천 위에 놓인 흰 꽃과 나뭇잎">
+
+                            <figcaption class="hero__image-overlay">
+                                <span>BOTANICAL</span>
+                                <p>자연에서 얻은 섬세한 영감</p>
+                            </figcaption>
+                        </figure>
+
+                        <!-- 두 번째 이미지 -->
+                        <figure class="hero__small-image" tabindex="0">
+                            <img src="./images/main/hero-bottle.png" alt="앰버 보틀을 들고 있는 모습">
+
+                            <figcaption class="hero__image-overlay">
+                                <span>SKIN CARE</span>
+                                <p>피부를 위한 사려 깊은 루틴</p>
+                            </figcaption>
+                        </figure>
+
+                        <p class="hero__label">
+                            SKIN RITUAL
+                        </p>
+                    </div>
+
+                    <!-- 메인 문구 -->
+                    <div class="hero__text">
+                        <p class="hero__eyebrow">
+                            BOTANICAL DAILY CARE
+                        </p>
+                        <h2 class="hero__title">
+                            A QUIET RITUAL<br>
+                            FOR EVERY DAY
+                        </h2>
+
+                        <p class="hero__description">
+                            피부와 감각을 위한 사려 깊은 일상의 의식
+                        </p>
+
+                        <a href="#store" class="hero__button">
+                            <span>/ DISCOVER THE RITUAL</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 오른쪽 메인 이미지 Swiper -->
+                <div class="hero__right-visual">
+                    <div class="swiper heroSwiper">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide hero__slide--hand">
+                                <img src="./images/main/hero-hand-care.png" alt="손에 핸드크림을 바르는 모습">
+                            </div>
+
+                            <div class="swiper-slide hero__slide--store">
+                                <img src="./images/main/hero-store.jpg" alt="스킨케어 매장 내부">
+                            </div>
+
+                            <div class="swiper-slide hero__slide--skincare">
+                                <img src="./images/main/hero-skincare.jpg" alt="스킨케어 제품">
+                            </div>
+                        </div>
+
+                        <!-- 페이지 표시 점 -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <picture class="hero__responsive-picture">
+                        <!-- 768px 이하에서는 세로형 모바일 이미지 -->
+                        <source media="(max-width: 768px)" srcset="./images/main/hero-mobile-v2.png">
+
+                        <!-- 769px 이상에서는 가로형 반응형 이미지 -->
+                        <img src="./images/main/hero-responsive-1400.png" alt="보태니컬 스킨케어 제품"
+                            class="hero__responsive-image">
+                    </picture>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 인기 제품 -->
+        <section class="best-products" id="best-products">
+            <div class="best-products__inner">
+
+                <!-- 인기제품 제목 영역 -->
+                <div class="best-products__heading">
+                    <div>
+                        <p class="best-products__eyebrow">
+                            CURATED ESSENTIALS
+                        </p>
+
+                        <h2 class="best-products__title">
+                            BEST SELLERS
+                        </h2>
+                    </div>
+                </div>
+
+                <!-- 제품 Swiper 영역 -->
+                <div class="swiper bestProductsSwiper">
+                    <!-- 제품 카드 목록 -->
+                    <ul class="best-products__list swiper-wrapper">
+                        <!-- 제품 01 -->
+                        <li class="best-products__item swiper-slide">
+                            <a href="./product-detail.html?product=cleanser" class="best-products__card">
+                                <figure class="best-products__visual">
+                                    <img src="./images/products/product-cleanser.png" alt="앰버 용기에 담긴 페이셜 클렌저" />
+
+                                    <span class="best-products__number">01</span>
+                                    <span class="best-products__view">VIEW PRODUCT</span>
+                                </figure>
+
+                                <div class="best-products__information">
+                                    <div>
+                                        <p class="best-products__category">CLEANSER</p>
+                                        <h3 class="best-products__name">젠틀 페이셜 클렌저</h3>
+                                    </div>
+                                    <p class="best-products__price">₩43,000</p>
+                                </div>
+                                <p class="best-products__description">피부의 수분을 지키면서 부드럽게 세정하는 데일리 클렌저</p>
+                            </a>
+                        </li>
+
+                        <!-- 제품 02 -->
+                        <li class="best-products__item swiper-slide">
+                            <a href="./product-detail.html?product=serum" class="best-products__card">
+                                <figure class="best-products__visual">
+                                    <img src="./images/products/product-serum.png" alt="스포이드가 달린 앰버 세럼 용기" />
+
+                                    <span class="best-products__number">02</span>
+                                    <span class="best-products__view">VIEW PRODUCT</span>
+                                </figure>
+
+                                <div class="best-products__information">
+                                    <div>
+                                        <p class="best-products__category">SERUM</p>
+                                        <h3 class="best-products__name">보태니컬 밸런싱 세럼</h3>
+                                    </div>
+                                    <p class="best-products__price">₩79,000</p>
+                                </div>
+                                <p class="best-products__description">건조하고 지친 피부에 풍부한 수분감을 전하는 세럼</p>
+                            </a>
+                        </li>
+
+                        <!-- 제품 03 -->
+                        <li class="best-products__item swiper-slide">
+                            <a href="./product-detail.html?product=cream" class="best-products__card">
+                                <figure class="best-products__visual">
+                                    <img src="./images/products/product-cream.png" alt="앰버색 단지에 담긴 페이셜 크림" />
+
+                                    <span class="best-products__number">03</span>
+                                    <span class="best-products__view">VIEW PRODUCT</span>
+                                </figure>
+
+                                <div class="best-products__information">
+                                    <div>
+                                        <p class="best-products__category">MOISTURISER</p>
+                                        <h3 class="best-products__name">리피 페이셜 크림</h3>
+                                    </div>
+
+                                    <p class="best-products__price">₩67,000</p>
+                                </div>
+
+                                <p class="best-products__description">피부를 편안하게 감싸고 보습을 유지해 주는 페이셜 크림</p>
+                            </a>
+                        </li>
+
+                        <!-- 제품 04 -->
+                        <li class="best-products__item swiper-slide">
+                            <a href="./product-detail.html?product=hand-balm" class="best-products__card">
+                                <figure class="best-products__visual">
+                                    <img src="./images/products/product-hand-balm.png" alt="튜브 형태의 아로마 핸드밤" />
+
+                                    <span class="best-products__number">04</span>
+                                    <span class="best-products__view">VIEW PRODUCT</span>
+                                </figure>
+
+                                <div class="best-products__information">
+                                    <div>
+                                        <p class="best-products__category">HAND CARE</p>
+                                        <h3 class="best-products__name">아로마틱 핸드 밤</h3>
+                                    </div>
+                                    <p class="best-products__price">₩39,000</p>
+                                </div>
+                                <p class="best-products__description">건조한 손에 풍부한 보습과 은은한 향을 남기는 핸드 밤</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- 페이지 표시 점 -->
+                    <div class="best-products__pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 제품 카테고리 -->
+        <section class="category">
+            <div class="category__inner">
+
+                <!-- 카테고리 섹션 제목 영역 -->
+                <div class="category__heading">
+                    <p class="category__eyebrow">
+                        EXPLORE OUR RANGE
+                    </p>
+
+                    <h2 class="category__title">
+                        SHOP BY CATEGORY
+                    </h2>
+                </div>
+
+                <!-- 카테고리 Swiper 영역 -->
+                <div class="swiper categorySwiper">
+                    <!-- 카테고리 목록 -->
+                    <ul class="category__list swiper-wrapper">
+                        <!-- 첫번째 슬라이드 -->
+                        <li class="category__item swiper-slide">
+                            <a href="./products.html#skin-care" class="category__link">
+                                <img src="./images/category/category-skin.png" alt="스킨 케어 제품"
+                                    class="category__image category__image--default">
+
+                                <img src="./images/category/category-skin.jpg" alt="스킨 케어 제품 이미지"
+                                    class="category__image category__image--hover">
+
+                                <span class="category__name">SKIN CARE</span>
+
+                                <span class="category__explore">
+                                    EXPLORE
+                                    <span class="material-symbols-outlined">
+                                        arrow_right_alt
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+
+                        <!-- 두번째 슬라이드 -->
+                        <li class="category__item swiper-slide">
+                            <a href="./products.html#body-hand" class="category__link">
+                                <img src="./images/category/category-body.png" alt="바디 및 핸드 케어"
+                                    class="category__image category__image--default">
+
+                                <img src="./images/category/category-body.jpg" alt="바디 케어 이미지"
+                                    class="category__image category__image--hover">
+
+                                <span class="category__name">BODY &amp; HAND</span>
+
+                                <span class="category__explore">
+                                    EXPLORE
+                                    <span class="material-symbols-outlined">
+                                        arrow_right_alt
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+
+                        <!-- 세번째 슬라이드 -->
+                        <li class="category__item swiper-slide">
+                            <a href="./products.html#hair-care" class="category__link">
+                                <img src="./images/category/category-hair.png" alt="헤어 케어 제품"
+                                    class="category__image category__image--default">
+
+                                <img src="./images/category/category-hair.jpg" alt="헤어 케어 제품 이미지"
+                                    class="category__image category__image--hover">
+
+                                <span class="category__name">HAIR CARE</span>
+
+                                <span class="category__explore">
+                                    EXPLORE
+                                    <span class="material-symbols-outlined">
+                                        arrow_right_alt
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 브랜드의 시작 -->
+        <section class="brand-origin" id="brand-story">
+            <!-- 배경 이미지 -->
+            <img src="./images/main/founder-history-background.png" alt="이솝의 초창기를 상징적으로 표현한 멜버른 살롱 장면"
+                class="brand-origin__background" />
+            <!-- 글자 가독성을 위한 배경 효과 -->
+            <div class="brand-origin__overlay"></div>
+            <!-- 브랜드 이야기 -->
+            <div class="brand-origin__inner">
+                <div class="brand-origin__content">
+                    <div class="brand-origin__eyebrow">
+                        <p>
+                            MELBOURNE · 1987
+                        </p>
+                    </div>
+
+                    <div class="brand-origin__title">
+                        <h2>
+                            DENNIS<br>
+                            PAPHITIS
+                        </h2>
+                    </div>
+
+                    <div class="brand-origin__founder">
+                        <p>
+                            FOUNDER OF AESOP
+                        </p>
+                    </div>
+
+                    <div class="brand-origin__description">
+                        <p>
+                            멜버른의 작은 헤어 살롱에서 시작된 하나의 실험.
+                            창업자 데니스 파피티스는 에센셜 오일과 세심한 연구를 바탕으로
+                            이솝의 첫 이야기가 시작되었습니다.
+                        </p>
+                    </div>
+
+                    <button type="button" class="brand-origin__link">
+                        <span>브랜드 이야기 더보기</span>
+
+                        <span class="material-symbols-outlined">
+                            arrow_right_alt
+                        </span>
+                    </button>
+
+                    <small class="brand-origin__caption">
+                        An imagined scene inspired by Aesop’s early years
+                    </small>
+                </div>
+            </div>
+        </section>
+
+        <!-- 매장 안내 -->
+        <section class="store" id="store">
+            <div class="store__inner">
+
+                <!-- 매장 안내 제목 영역 -->
+                <div class="store__heading">
+                    <p class="store__eyebrow">OUR STORES</p>
+
+                    <h2 class="store__title">
+                        공간에서 만나는<br>
+                        고요한 경험
+                    </h2>
+                </div>
+
+                <div class="store__content">
+                    <!-- 매장 이미지 -->
+                    <figure class="store__visual">
+                        <img src="./images/main/store-interior.png" alt="따뜻하고 차분한 분위기의 이솝 매장 내부" />
+                    </figure>
+
+                    <!-- 매장 정보 -->
+                    <div class="store__information">
+                        <p class="store__number">01 / 03</p>
+                        <h3 class="store__name">
+                            AESOP SEONGSU
+                        </h3>
+                        <p class="store__description">
+                            지역의새로운 고유한 분위기를 담아 완성한 공간에서
+                            제품과 향을 천천히 경험해보세요.
+                        </p>
+
+                        <dl class="store__details">
+                            <div class="store__detail">
+                                <dt>ADDRESS</dt>
+                                <dd>서울특별시 성동구 연무장길 00</dd>
+                            </div>
+                            <div class="store__detail">
+                                <dt>OPENING HOURS</dt>
+                                <dd>매일 11:00 ~ 21:00</dd>
+                            </div>
+                            <div class="store__detail">
+                                <dt>CONTACT</dt>
+                                <dd>02-000-0000</dd>
+                            </div>
+                        </dl>
+
+                        <button type="button" class="store__link">
+                            <span>매장 자세히 보기</span>
+
+                            <span class="material-symbols-outlined">
+                                arrow_right_alt
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="footer__inner">
+
+            <!-- 푸터 상단 -->
+            <div class="footer__top">
+                <!-- 브랜드 로고 -->
+                <div class="footer__brand">
+                    <a href="./index.html" class="footer__logo">
+                        Aēsop
+                    </a>
+                </div>
+
+                <!-- 뉴스레터 -->
+                <div class="footer__newsletter">
+                    <p class="footer__eyebrow">
+                        STAY IN TOUCH
+                    </p>
+
+                    <p class="footer__description">
+                        새로운 제품과 브랜드 소식을 받아보세요.
+                    </p>
+
+                    <form class="footer__form">
+                        <label for="footer-email" class="footer__label">
+                            EMAIL ADDRESS
+                        </label>
+
+                        <div class="footer__input-wrap">
+                            <input type="email" id="footer-email" class="footer__input" placeholder="이메일 주소를 입력해 주세요"
+                                required>
+
+                            <button type="submit" class="footer__submit" aria-label="뉴스레터 신청">
+                                <span class="material-symbols-outlined">
+                                    arrow_circle_right
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- 푸터 가운데 메뉴 -->
+            <div class="footer__middle">
+                <!-- 주요 메뉴 -->
+                <nav class="footer__nav" aria-label="하단 주요 메뉴">
+                    <a href="./products.html" class="footer__nav-link">
+                        제품
+                    </a>
+
+                    <a href="./index.html#brand-story" class="footer__nav-link">
+                        브랜드
+                    </a>
+
+                    <a href="./index.html#store" class="footer__nav-link">
+                        스토어
+                    </a>
+                </nav>
+
+                <!-- 정책 및 SNS -->
+                <div class="footer__utility">
+                    <nav class="footer__policy" aria-label="사이트 정책">
+                        <button type="button" class="footer__policy-link">
+                            개인정보 처리방침
+                        </button>
+
+                        <button type="button" class="footer__policy-link">
+                            쿠키 정책
+                        </button>
+
+                        <button type="button" class="footer__policy-link">
+                            이용약관
+                        </button>
+
+                        <button type="button" class="footer__policy-link">
+                            접근성
+                        </button>
+                    </nav>
+
+                    <!-- SNS 아이콘 -->
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#" class="footer__social-link" aria-label="X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+
+                        <a href="#" class="footer__social-link" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="#" class="footer__social-link" aria-label="문의하기">
+                            <i class="fa-regular fa-comment"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 푸터 하단 -->
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © 2026 AESOP RENEWAL
+                </p>
+
+                <p class="footer__notice">
+                    본 사이트는 개인 포트폴리오 목적으로 제작한 비공식 리뉴얼
+                    프로젝트이며, Aesop 공식 사이트와 관련이 없습니다.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Swiper JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+
+    <!-- 내 JavaScript -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

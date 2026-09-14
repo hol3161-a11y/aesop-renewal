@@ -1,0 +1,14 @@
+@use "./reset";  //브라우저 기본 스타일 초기화
+@use "./variables";  //색상과 반응형 크기 저장
+@use "./common";  //공통 레이아웃과 버튼
+
+//공통 영역
+@use "./header";
+@use "./footer";
+
+//페이지별 스타일
+@use "./main";
+@use "./products";
+@use "./detail";
+
+@use "./media.scss";
