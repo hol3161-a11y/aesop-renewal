@@ -4,10 +4,11 @@
 
 <img width="1536" height="1024" alt="aesop-thumbnail" src="https://github.com/user-attachments/assets/ece84133-aeff-44f7-a159-8a087fe554a2" />
 
-## 🔗 Links
 
-- **배포 사이트:**https://aesop-renewal-livid.vercel.app/
-- **GitHub:** [https://github.com/hol3161-a11y/aesop-renewal](https://github.com/hol3161-a11y/aesop-renewal)
+## 🔗 프로젝트 링크
+
+- **Demo** : [배포 링크](https://aesop-renewal-livid.vercel.app/)
+- **GitHub** : [GitHub 저장소 링크](https://github.com/hol3161-a11y/aesop-renewal)
 
 ## 📖 프로젝트 개요
 
@@ -29,6 +30,16 @@
 - 콘텐츠의 성격이 마크업 구조에서 드러날 것
 - 화면 크기가 달라져도 정보의 우선순위가 유지될 것
 - 마우스뿐 아니라 키보드와 보조기기 사용자도 상태를 이해할 수 있을 것
+
+## 📚 프로젝트 문서 자료
+
+| 문서 종류 | 파일명 | 설명 |
+| :---: | :---: | --- |
+| 기획서 | [기획서.pdf](PDF 주소 입력) | 프로젝트 목적, 리뉴얼 방향, 콘텐츠 구성 및 주요 기능을 정리한 문서 |
+| 화면 설계 | [화면설계.pdf](PDF 주소 입력) | 메인, 제품 목록, 제품 상세 페이지의 화면 구성과 사용자 이동 흐름을 정리한 자료 |
+| 디자인 | [디자인.pdf](PDF 주소 입력) | 색상, 폰트, 이미지와 UI 요소 등 이솝 리뉴얼의 전체 디자인 시안을 정리한 자료 |
+| 사이트맵 | [사이트맵.pdf](PDF 주소 입력) | 웹사이트를 구성하는 페이지와 각 페이지의 연결 구조를 정리한 자료 |
+| 와이어프레임 | [와이어프레임.pdf](PDF 주소 입력) | 페이지별 콘텐츠 배치와 화면 구조를 와이어프레임으로 설계한 자료 |
 
 ## 👩‍💻 작업 범위
 
